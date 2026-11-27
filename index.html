@@ -1,18 +1,349 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta name="theme-color" content="#0b1020" />
 
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./assets/css/style.css">
-    <title>Project</title>
-</head>
+        <title>Skills Check 016 — Box Shadow | ShadowLab</title>
 
-<body>
-    start
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap"
+            rel="stylesheet"
+        />
 
-    <script src="./assets/js/main.js"></script>
-</body>
+        <link rel="stylesheet" href="./assets/css/style.css" />
+    </head>
+    <body>
+        <div class="app-shell">
+            <header class="topbar">
+                <a href="#" class="brand" aria-label="ShadowLab home">
+                    <span class="brand-icon">S.</span>
+                    <span class="brand-name">Shadow<span>Lab</span></span>
+                </a>
 
+                <div class="topbar-meta">
+                    <span class="course-label">CSS COLLECTION</span>
+                    <span class="course-number">016</span>
+                </div>
+
+                <a
+                    href="https://freetimezp.github.io/roadmap-web-coding/"
+                    class="roadmap-link"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                >
+                    Roadmap <span>↗</span>
+                </a>
+            </header>
+
+            <main class="main-content">
+                <!-- HERO -->
+                <section class="hero">
+                    <div class="hero-content">
+                        <div class="eyebrow">
+                            <span class="eyebrow-dot"></span>
+                            SKILLS CHECK / 016
+                        </div>
+
+                        <h1>
+                            Give it<br />
+                            <span class="hero-accent">depth.</span>
+                        </h1>
+
+                        <p class="hero-description">
+                            Every great interface has depth. Test your knowledge
+                            of CSS box-shadow, from subtle elevation to layered
+                            shadows and soft visual effects.
+                        </p>
+
+                        <div class="hero-tags">
+                            <span>CSS</span>
+                            <span>20 QUESTIONS</span>
+                            <span>BEGINNER → INTERMEDIATE</span>
+                        </div>
+
+                        <button class="start-button" id="start-button">
+                            <span>Start challenge</span>
+                            <span class="start-arrow">↗</span>
+                        </button>
+                    </div>
+
+                    <div class="hero-art" aria-hidden="true">
+                        <div class="art-grid"></div>
+
+                        <div class="art-orbit orbit-one"></div>
+                        <div class="art-orbit orbit-two"></div>
+
+                        <div class="shadow-card shadow-card-back"></div>
+                        <div class="shadow-card shadow-card-middle"></div>
+
+                        <div class="shadow-card shadow-card-front">
+                            <span class="card-index">016 / ELEVATION</span>
+                            <strong>Depth<br />is a detail.</strong>
+                            <span class="card-shadow-label"
+                                >BOX-SHADOW: ACTIVE</span
+                            >
+                        </div>
+
+                        <div class="art-chip chip-one">0 12px 30px</div>
+                        <div class="art-chip chip-two">SOFTNESS</div>
+
+                        <div class="art-sticker">
+                            <span>CSS</span>
+                            <strong>016</strong>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- OVERVIEW -->
+                <section class="quiz-overview">
+                    <article class="overview-card">
+                        <span class="overview-label">TOTAL QUESTIONS</span>
+                        <strong>20</strong>
+                        <span class="overview-caption">One point each</span>
+                    </article>
+
+                    <article class="overview-card">
+                        <span class="overview-label">TOPIC</span>
+                        <strong>Box Shadow</strong>
+                        <span class="overview-caption"
+                            >Depth, elevation & softness</span
+                        >
+                    </article>
+
+                    <article class="overview-card">
+                        <span class="overview-label">YOUR GOAL</span>
+                        <strong>100%</strong>
+                        <span class="overview-caption"
+                            >Learn with every answer</span
+                        >
+                    </article>
+                </section>
+
+                <!-- QUIZ -->
+                <section class="quiz-section hidden" id="quiz-section">
+                    <div class="quiz-header">
+                        <div>
+                            <span class="quiz-label">KNOWLEDGE CHECK</span>
+                            <h2>Build your understanding.</h2>
+                        </div>
+
+                        <div class="question-counter">
+                            <span id="current-question">01</span>
+                            <span class="counter-divider">/</span>
+                            <span id="total-questions">20</span>
+                        </div>
+                    </div>
+
+                    <div class="quiz-meta-row">
+                        <div class="progress-info">
+                            <span>YOUR PROGRESS</span>
+                            <span id="progress-text">0% completed</span>
+                        </div>
+                        <div class="timer" id="timer">00:00</div>
+                    </div>
+
+                    <div class="progress-track">
+                        <div class="progress-fill" id="progress-fill"></div>
+                    </div>
+
+                    <div class="question-card" id="question-card">
+                        <div class="question-topline">
+                            <span
+                                class="question-category"
+                                id="question-category"
+                            >
+                                BOX SHADOW
+                            </span>
+                            <span class="question-points">+1 POINT</span>
+                        </div>
+
+                        <h3 class="question-title" id="question-text">
+                            Loading question...
+                        </h3>
+
+                        <div
+                            class="question-code hidden"
+                            id="question-code-wrap"
+                        >
+                            <div class="code-header">
+                                <div class="code-dots">
+                                    <span></span>
+                                    <span></span>
+                                    <span></span>
+                                </div>
+                                <span>style.css</span>
+                            </div>
+                            <pre><code id="question-code"></code></pre>
+                        </div>
+
+                        <div class="answer-instruction" id="answer-instruction">
+                            Select the best answer.
+                        </div>
+
+                        <div
+                            class="answers-grid"
+                            id="answers-grid"
+                            role="group"
+                            aria-label="Answer options"
+                        ></div>
+
+                        <div
+                            class="feedback-box hidden"
+                            id="feedback-box"
+                            aria-live="polite"
+                        >
+                            <div class="feedback-icon" id="feedback-icon">
+                                ✓
+                            </div>
+                            <div class="feedback-content">
+                                <strong id="feedback-title">Correct!</strong>
+                                <p id="feedback-text"></p>
+                            </div>
+                            <span class="feedback-points" id="feedback-points"
+                                >+1</span
+                            >
+                        </div>
+
+                        <div class="question-footer">
+                            <div class="question-hint-wrap">
+                                <span class="question-hint" id="question-hint">
+                                    Choose an answer to continue.
+                                </span>
+
+                                <div class="keyboard-hint">
+                                    <kbd>1</kbd>
+                                    <kbd>2</kbd>
+                                    <kbd>3</kbd>
+                                    <kbd>4</kbd>
+                                    <span>to select</span>
+                                </div>
+                            </div>
+
+                            <div class="question-actions">
+                                <button
+                                    class="check-button"
+                                    id="check-button"
+                                    disabled
+                                >
+                                    Check answer <span>✓</span>
+                                </button>
+
+                                <button
+                                    class="next-button hidden"
+                                    id="next-button"
+                                >
+                                    <span>Next question</span>
+                                    <span>→</span>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- RESULTS -->
+                <section class="results-section hidden" id="results-section">
+                    <div class="results-card">
+                        <div class="results-decoration" aria-hidden="true">
+                            <span class="result-shape result-shape-one"></span>
+                            <span class="result-shape result-shape-two"></span>
+                            <span
+                                class="result-shape result-shape-three"
+                            ></span>
+                        </div>
+
+                        <span class="results-eyebrow"
+                            >SKILLS CHECK COMPLETED</span
+                        >
+                        <h2 id="result-heading">Well done!</h2>
+                        <p class="results-description" id="result-message">
+                            Your understanding of CSS depth is growing.
+                        </p>
+
+                        <div class="score-circle" id="score-circle">
+                            <div class="score-inner">
+                                <strong id="score-percentage">0%</strong>
+                                <span>YOUR SCORE</span>
+                            </div>
+                        </div>
+
+                        <div class="result-stats">
+                            <div>
+                                <strong id="correct-count">0</strong>
+                                <span>Correct</span>
+                            </div>
+                            <div>
+                                <strong id="incorrect-count">0</strong>
+                                <span>Incorrect</span>
+                            </div>
+                            <div>
+                                <strong id="result-time">0:00</strong>
+                                <span>Time</span>
+                            </div>
+                        </div>
+
+                        <div class="results-actions">
+                            <button class="restart-button" id="restart-button">
+                                <span>Try again</span>
+                                <span>↻</span>
+                            </button>
+
+                            <a
+                                class="roadmap-button"
+                                href="https://freetimezp.github.io/roadmap-web-coding/"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                            >
+                                Back to roadmap ↗
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="review-section">
+                        <div class="review-heading">
+                            <div>
+                                <span class="section-label"
+                                    >LEARNING REVIEW</span
+                                >
+                                <h3>Review your answers.</h3>
+                            </div>
+                            <span id="review-count">20 questions</span>
+                        </div>
+
+                        <div class="review-list" id="review-list"></div>
+                    </div>
+                </section>
+
+                <!-- LEARNING NOTE -->
+                <section class="learning-note" id="learning-note">
+                    <div class="note-icon">✳</div>
+                    <div>
+                        <span>REMEMBER THIS</span>
+                        <p>
+                            The <code>box-shadow</code> property adds one or
+                            more shadows to an element. Its core values control
+                            horizontal offset, vertical offset, blur, spread,
+                            and color. A larger blur creates a softer edge; a
+                            larger offset moves the shadow.
+                        </p>
+                    </div>
+                </section>
+            </main>
+
+            <footer class="footer">
+                <a href="#" class="footer-brand">
+                    <span class="brand-icon">S.</span>
+                    ShadowLab
+                </a>
+
+                <span>SKILLS CHECK 016 — BOX SHADOW</span>
+                <span>KEEP EXPERIMENTING.</span>
+            </footer>
+        </div>
+
+        <script src="./assets/js/main.js"></script>
+    </body>
 </html>
